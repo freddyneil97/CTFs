@@ -1,16 +1,20 @@
 # 🔐 Brute Force Authentication Explained (Step-by-Step) 💥 - Freddy
+![Screenshot From 2025-04-20 23-45-23](https://github.com/user-attachments/assets/d813f427-df49-4b54-976b-f774d1932408)
 
-![alt text](<Screenshot From 2025-04-20 23-45-23.png>)
 
 My first initial thought as soon as I unziped the zip file was its definetly a brute force attack. So I ran the bellow script:
 
-`sudo hydra -L usernames.txt -P passwords.txt 10.10.139.225 http-post-form "/login:username=^USER^&password=^PASS^:Error" -v -t 40`
+```
+sudo hydra -L usernames.txt -P passwords.txt 10.10.139.225 http-post-form
+"/login:username=^USER^&password=^PASS^:Error" -v -t 40
+```
 
-![alt text](<Screenshot From 2025-04-21 00-24-17.png>)
+![Screenshot From 2025-04-21 00-24-17](https://github.com/user-attachments/assets/cd0d1c9c-5492-4d17-b022-c16a09199147)
 
 I was not prepared to wait. I reloaded the website. It presented me with this:
 
-![alt text](<Screenshot From 2025-04-21 00-28-31.png>)
+![Screenshot From 2025-04-21 00-28-31](https://github.com/user-attachments/assets/2716ac86-6bb7-4026-90e7-9c1320655a83)
+
 
 This script tries to brute force login by using the username & password combos to break into a login page that also has a simple math captcha. Here's what it does 👇
 
@@ -108,10 +112,11 @@ print("[*] Attempting Password: %s for User: %s" % (password, username))
 ```
 ## 7️⃣ Finally found the username and password
 
-![alt text](<Screenshot From 2025-04-21 03-15-13.png>)
+![Screenshot From 2025-04-21 03-08-07](https://github.com/user-attachments/assets/3bf8fbe7-a355-4b1e-bb90-d4769b3d762c)
+
 
 A small syntax error on the code but have corrected it.
 
 ## 8️⃣ Captured the flag successfully
+![Screenshot From 2025-04-21 03-15-13](https://github.com/user-attachments/assets/f1096bb3-d6bf-462c-abfc-6472d5621ef1)
 
-![alt text](<Screenshot From 2025-04-21 03-08-07.png>)
