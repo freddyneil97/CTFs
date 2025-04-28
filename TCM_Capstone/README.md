@@ -79,4 +79,4 @@ sqlmap -r sql.txt -T users --dump
 - Just because I found one vulnerability does not meet there will not be multiple.
 - Think like an ethical hacker and not be lazy.
 
-Thanks
+## Thank You
